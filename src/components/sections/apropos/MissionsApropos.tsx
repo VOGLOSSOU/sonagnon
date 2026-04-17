@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Quote, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const missions = [
   "Encadrer des groupes de réflexion composés de jeunes et réveiller une prise de conscience sur leurs rôles dans l'avenir de la cité lacustre.",
@@ -37,26 +37,10 @@ export default function MissionsApropos() {
                 <p className="text-gray-600 text-base leading-relaxed">{mission}</p>
               </div>
             ))}
-
-            {/* Citation forte */}
-            <div className="mt-10 bg-green-700 rounded-2xl p-7 text-white">
-              <Quote size={28} className="text-green-300 mb-4" />
-              <p className="text-base leading-relaxed italic font-medium">
-                L&apos;homme du lac ne connaît ni jurisprudence, l&apos;enfant aucune
-                protection sociale et la femme gémit sous le poids de maltraitances en
-                tous genres. C&apos;est pour cela et dans une approche à la fois de
-                prévention et d&apos;urgence, que l&apos;ASo s&apos;est donnée un rôle
-                bien encré.
-              </p>
-              <p className="mt-4 text-green-300 text-sm font-semibold uppercase tracking-wide">
-                — Antonin-Midofi HOUNGA, responsable de l&apos;Association SONAGNON
-              </p>
-            </div>
           </div>
 
           {/* Galerie 3 images */}
           <div className="grid grid-cols-2 gap-3">
-            {/* Grande image en haut à gauche */}
             <div className="relative col-span-2 h-60 rounded-2xl overflow-hidden shadow-md">
               <Image
                 src="/images/a-propos/mission-3.png"
@@ -65,7 +49,6 @@ export default function MissionsApropos() {
                 className="object-cover"
               />
             </div>
-            {/* Deux petites en bas */}
             <div className="relative h-44 rounded-2xl overflow-hidden shadow-md">
               <Image
                 src="/images/a-propos/mission-1.png"
@@ -85,6 +68,20 @@ export default function MissionsApropos() {
           </div>
 
         </div>
+
+        {/* Citation centrée sous les deux colonnes */}
+        <div className="mt-16 max-w-3xl mx-auto text-center">
+          <p className="text-xl md:text-2xl text-gray-700 italic leading-relaxed font-medium">
+            &ldquo; L&apos;homme du lac ne connaît ni jurisprudence, l&apos;enfant aucune
+            protection sociale et la femme gémit sous le poids de maltraitances en tous
+            genres. C&apos;est pour cela et dans une approche à la fois de prévention et
+            d&apos;urgence, que l&apos;ASo s&apos;est donnée un rôle bien encré. &rdquo;
+          </p>
+          <p className="mt-5 text-sm font-semibold uppercase tracking-widest text-green-600">
+            Antonin-Midofi HOUNGA — Responsable de l&apos;Association SONAGNON
+          </p>
+        </div>
+
       </div>
     </section>
   );
