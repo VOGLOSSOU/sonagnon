@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -10,9 +11,13 @@ export default function Footer() {
           {/* Identité */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 bg-green-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
+              <Image
+                src="/logo-sonagnon.webp"
+                alt="Logo SONAGNON"
+                width={44}
+                height={44}
+                className="object-contain"
+              />
               <div>
                 <span className="block font-extrabold text-white text-base tracking-wide">SONAGNON</span>
                 <span className="block text-[10px] text-gray-500 uppercase tracking-widest">

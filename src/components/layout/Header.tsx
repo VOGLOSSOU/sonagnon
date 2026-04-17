@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navItems } from "@/data/navigation";
@@ -15,10 +16,14 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            {/* TODO: remplacer par <Image> avec le vrai logo */}
-            <div className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <Image
+              src="/logo-sonagnon.webp"
+              alt="Logo SONAGNON"
+              width={48}
+              height={48}
+              className="object-contain"
+              priority
+            />
             <div className="leading-tight">
               <span className="block font-extrabold text-green-800 text-base tracking-wide">
                 SONAGNON
