@@ -90,68 +90,80 @@ export default function ContactPage() {
 
       {/* Contenu */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            {/* Coordonnées */}
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-8">
-                Nos coordonnées
-              </h2>
+          {/* En-tête section */}
+          <div className="text-center mb-12">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-green-600 mb-3">
+              Nos coordonnées
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+              Toutes les façons de{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-green-700">nous joindre</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-green-100 -z-10 rounded" />
+              </span>
+            </h2>
+            <div className="mt-6 flex items-center justify-center gap-2">
+              <div className="h-0.5 w-8 bg-green-200 rounded" />
+              <div className="h-0.5 w-16 bg-green-500 rounded" />
+              <div className="h-0.5 w-8 bg-green-200 rounded" />
+            </div>
+          </div>
 
-              <div className="space-y-4">
-                {coordonnees.map(({ icone: Icon, label, valeur, href }) => (
-                  <div
-                    key={label}
-                    className="bg-white border border-gray-100 rounded-2xl p-5 flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center shrink-0">
-                      <Icon size={18} className="text-green-700" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">
-                        {label}
-                      </p>
-                      {href ? (
-                        <a
-                          href={href}
-                          className="text-gray-800 font-medium hover:text-green-700 transition-colors whitespace-pre-line text-sm leading-relaxed"
-                        >
-                          {valeur}
-                        </a>
-                      ) : (
-                        <p className="text-gray-800 font-medium text-sm leading-relaxed">
-                          {valeur}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Réseaux sociaux */}
-              <div className="mt-8">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-                  Réseaux sociaux
-                </p>
-                <div className="flex gap-3">
-                  {reseaux.map(({ icone: Icon, label, href, couleur }) => (
-                    <Link
-                      key={label}
+          {/* Grille coordonnées 2×2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {coordonnees.map(({ icone: Icon, label, valeur, href }) => (
+              <div
+                key={label}
+                className="bg-white border border-gray-100 rounded-2xl p-6 flex gap-5 items-start shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center shrink-0">
+                  <Icon size={22} className="text-green-700" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">
+                    {label}
+                  </p>
+                  {href ? (
+                    <a
                       href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={label}
-                      className={`w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center text-gray-500 transition-all duration-200 hover:shadow-md ${couleur}`}
+                      className="text-gray-800 font-medium hover:text-green-700 transition-colors whitespace-pre-line text-sm leading-relaxed"
                     >
-                      <Icon size={20} />
-                    </Link>
-                  ))}
+                      {valeur}
+                    </a>
+                  ) : (
+                    <p className="text-gray-800 font-medium text-sm leading-relaxed">
+                      {valeur}
+                    </p>
+                  )}
                 </div>
               </div>
-            </div>
-
+            ))}
           </div>
+
+          {/* Réseaux sociaux */}
+          <div className="mt-10 border-t border-gray-200 pt-10 text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-5">
+              Réseaux sociaux
+            </p>
+            <div className="flex gap-4 justify-center">
+              {reseaux.map(({ icone: Icon, label, href, couleur }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className={`flex items-center gap-2.5 px-5 py-3 bg-white border border-gray-200 rounded-xl text-gray-600 text-sm font-medium transition-all duration-200 hover:shadow-md ${couleur}`}
+                >
+                  <Icon size={18} />
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
     </>
