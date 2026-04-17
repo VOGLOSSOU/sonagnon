@@ -7,7 +7,6 @@ export default function Stats() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
           {stats.map((stat) => (
             <div key={stat.label} className="text-white">
-              <div className="text-3xl mb-1">{stat.icone}</div>
               <div className="text-2xl md:text-3xl font-extrabold">{stat.valeur}</div>
               <div className="text-xs md:text-sm text-green-200 mt-1 leading-snug">{stat.label}</div>
             </div>

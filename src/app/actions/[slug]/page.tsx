@@ -27,7 +27,6 @@ export default async function ActionDetailPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero */}
       <section className="relative bg-gray-900 text-white py-24">
         <div className="absolute inset-0">
           <Image
@@ -41,16 +40,13 @@ export default async function ActionDetailPage({ params }: Props) {
           <Button href="/actions" variant="ghost" className="text-white hover:bg-white/10 mb-6 text-sm">
             ← Retour aux actions
           </Button>
-          <div className="text-5xl mb-4">{action.icone}</div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{action.titre}</h1>
           <p className="text-lg text-gray-300 max-w-2xl">{action.description}</p>
         </div>
       </section>
 
-      {/* Contenu */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* TODO: Remplacer par le vrai contenu de chaque action */}
           <div className="prose prose-lg text-gray-600">
             <p>[Contenu détaillé de l&apos;action «{action.titre}» à intégrer ici]</p>
           </div>

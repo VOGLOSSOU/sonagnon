@@ -16,16 +16,16 @@ export default function CallToAction() {
           villages lacustres du Bénin.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button href="/faire-un-don" variant="secondary" size="lg">
-            Faire un don
+          <Button href="/contact" variant="secondary" size="lg">
+            Nous contacter
           </Button>
           <Button
-            href="/contact"
+            href="/a-propos"
             variant="outline"
             size="lg"
             className="border-white text-white hover:bg-white/10"
           >
-            Nous contacter
+            En savoir plus
           </Button>
         </div>
       </div>
