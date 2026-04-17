@@ -23,3 +23,17 @@ export interface NavItem {
   href: string;
   children?: NavItem[];
 }
+
+export interface BlocProjet {
+  image: string;
+  alt: string;
+  paragraphes: string[];
+}
+
+export interface Projet {
+  slug: string;
+  titre: string;
+  resume: string;
+  imageCover: string;
+  blocs: BlocProjet[];
+}
