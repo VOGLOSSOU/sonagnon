@@ -5,8 +5,8 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "SONAGNON — Provocateurs de Changement",
-    template: "%s | SONAGNON",
+    default: "Association SONAGNON - Home",
+    template: "Association SONAGNON - %s",
   },
   description:
     "Association béninoise œuvrant depuis 1998 pour les populations lacustres du lac Nokoué : éducation, micro-crédit féminin, eau potable, énergie solaire et inclusion numérique.",

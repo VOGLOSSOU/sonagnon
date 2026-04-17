@@ -1,9 +1,19 @@
-// Page d'accueil — squelette propre, contenu à définir page par page
+import HeroHome from "@/components/sections/home/HeroHome";
+import StatsHome from "@/components/sections/home/StatsHome";
+import AboutHome from "@/components/sections/home/AboutHome";
+import ZoneHome from "@/components/sections/home/ZoneHome";
+import ActionsHome from "@/components/sections/home/ActionsHome";
+import CtaHome from "@/components/sections/home/CtaHome";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center text-gray-400 text-sm">
-      Page d&apos;accueil — en construction
-    </div>
+    <>
+      <HeroHome />
+      <StatsHome />
+      <AboutHome />
+      <ZoneHome />
+      <ActionsHome />
+<CtaHome />
+    </>
   );
 }
