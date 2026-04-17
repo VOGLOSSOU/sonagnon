@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MissionsApropos from "@/components/sections/apropos/MissionsApropos";
 import ZoneIntervention from "@/components/sections/apropos/ZoneIntervention";
 import StrategieApropos from "@/components/sections/apropos/StrategieApropos";
+import AgirEnsemble from "@/components/sections/apropos/AgirEnsemble";
 import CtaHome from "@/components/sections/home/CtaHome";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function AProposPage() {
       <MissionsApropos />
       <ZoneIntervention />
       <StrategieApropos />
+      <AgirEnsemble />
       <CtaHome />
     </>
   );
