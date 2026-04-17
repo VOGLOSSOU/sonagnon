@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const missions = [
   "Encadrer des groupes de réflexion composés de jeunes et réveiller une prise de conscience sur leurs rôles dans l'avenir de la cité lacustre.",
@@ -10,32 +13,84 @@ const missions = [
   "Encourager et accompagner moralement, mais aussi aider matériellement et financièrement les projets initiés par des jeunes souvent démunis.",
 ];
 
+function MissionItem({ text, index }: { text: string; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${index * 90}ms` }}
+      className={`flex gap-4 items-start group transition-all duration-500 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"}`}
+    >
+      <div className="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-600 transition-colors duration-200">
+        <CheckCircle2 size={16} className="text-green-700 group-hover:text-white transition-colors duration-200" />
+      </div>
+      <p className="text-gray-600 text-base leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
 export default function MissionsApropos() {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  useEffect(() => {
+    const el = titleRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setTitleVisible(true); observer.disconnect(); } },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* En-tête */}
-        <div className="mb-14">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-green-600 mb-3">
-            Ce qui nous anime
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Nos missions
+        {/* En-tête centré animé */}
+        <div
+          ref={titleRef}
+          className={`mb-14 text-center transition-all duration-700 ${titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Découvrez les{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-green-700">missions</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 bg-green-100 -z-10 rounded" />
+            </span>{" "}
+            de SONAGNON
           </h2>
+          <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
+            Six engagements concrets pour transformer la vie des populations
+            lacustres du lac Nokoué, au cœur du Bénin.
+          </p>
+          <div className="mt-6 flex items-center justify-center gap-2">
+            <div className="h-0.5 w-8 bg-green-200 rounded" />
+            <div className="h-0.5 w-16 bg-green-500 rounded" />
+            <div className="h-0.5 w-8 bg-green-200 rounded" />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
-          {/* Liste des missions */}
+          {/* Liste des missions avec animation slide-in */}
           <div className="space-y-5">
             {missions.map((mission, i) => (
-              <div key={i} className="flex gap-4 items-start group">
-                <div className="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-600 transition-colors duration-200">
-                  <CheckCircle2 size={16} className="text-green-700 group-hover:text-white transition-colors duration-200" />
-                </div>
-                <p className="text-gray-600 text-base leading-relaxed">{mission}</p>
-              </div>
+              <MissionItem key={i} text={mission} index={i} />
             ))}
           </div>
 
@@ -69,7 +124,7 @@ export default function MissionsApropos() {
 
         </div>
 
-        {/* Citation centrée sous les deux colonnes */}
+        {/* Citation centrée */}
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <p className="text-xl md:text-2xl text-gray-700 italic leading-relaxed font-medium">
             &ldquo; L&apos;homme du lac ne connaît ni jurisprudence, l&apos;enfant aucune
