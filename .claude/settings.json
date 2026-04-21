@@ -4,7 +4,8 @@
       "Bash(mkdir -p /home/nathan-voglossou/sonagnon/public/images/green-hub)",
       "Bash(cp /home/nathan-voglossou/sonagnon/ressources/photo-teeerra-sonagnon/*.jpg /home/nathan-voglossou/sonagnon/public/images/green-hub/)",
       "Bash(cp \"/home/nathan-voglossou/sonagnon/ressources/doc-teerra-sonagnon/Logo Teerra SAP.png\" /home/nathan-voglossou/sonagnon/public/images/green-hub/logo-teerra.png)",
-      "Bash(cp \"/home/nathan-voglossou/sonagnon/ressources/doc-teerra-sonagnon/Logo ASSOCIATION SONAGNON.png\" /home/nathan-voglossou/sonagnon/public/images/green-hub/logo-sonagnon-partenariat.png)"
+      "Bash(cp \"/home/nathan-voglossou/sonagnon/ressources/doc-teerra-sonagnon/Logo ASSOCIATION SONAGNON.png\" /home/nathan-voglossou/sonagnon/public/images/green-hub/logo-sonagnon-partenariat.png)",
+      "Bash(python3 -c ' *)"
     ],
     "additionalDirectories": [
       "/home/nathan-voglossou/sonagnon/src/app"

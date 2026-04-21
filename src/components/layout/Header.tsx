@@ -15,23 +15,15 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo-sonagnon.webp"
-              alt="Logo SONAGNON"
-              width={48}
-              height={48}
+              alt="Logo Association SONAGNON"
+              width={130}
+              height={71}
               className="object-contain"
               priority
             />
-            <div className="leading-tight">
-              <span className="block font-extrabold text-green-800 text-base tracking-wide">
-                SONAGNON
-              </span>
-              <span className="block text-[10px] text-gray-400 uppercase tracking-widest">
-                Provocateurs de Changement
-              </span>
-            </div>
           </Link>
 
           {/* Navigation desktop */}

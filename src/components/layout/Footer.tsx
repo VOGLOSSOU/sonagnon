@@ -10,20 +10,7 @@ export default function Footer() {
 
           {/* Identité */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/logo-sonagnon.webp"
-                alt="Logo SONAGNON"
-                width={44}
-                height={44}
-                className="object-contain"
-              />
-              <div>
-                <span className="block font-extrabold text-white text-base tracking-wide">SONAGNON</span>
-                <span className="block text-[10px] text-gray-500 uppercase tracking-widest">
-                  Provocateurs de Changement
-                </span>
-              </div>
+            <div className="mb-4">
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Association béninoise à but non lucratif œuvrant pour les populations lacustres
