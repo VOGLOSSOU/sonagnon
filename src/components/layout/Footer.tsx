@@ -11,6 +11,13 @@ export default function Footer() {
           {/* Identité */}
           <div>
             <div className="mb-4">
+              <Image
+                src="/logo-sonagnon.webp"
+                alt="Logo Association SONAGNON"
+                width={80}
+                height={44}
+                className="object-contain"
+              />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Association béninoise à but non lucratif œuvrant pour les populations lacustres

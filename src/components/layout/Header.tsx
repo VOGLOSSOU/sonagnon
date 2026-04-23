@@ -19,9 +19,9 @@ export default function Header() {
             <Image
               src="/logo-sonagnon.webp"
               alt="Logo Association SONAGNON"
-              width={130}
-              height={71}
-              className="object-contain"
+              width={100}
+              height={55}
+              className="w-16 md:w-20 h-auto object-contain"
               priority
             />
           </Link>
