@@ -4,9 +4,16 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const photos = Array.from({ length: 11 }, (_, i) =>
-  `/images/green-hub/IMG-20260420-WA${String(i).padStart(4, "0")}.jpg`
-);
+const photos = [
+  "/images/green-hub/IMG-20260420-WA0009.jpg", // 10
+  "/images/green-hub/IMG-20260420-WA0004.jpg", // 5
+  "/images/green-hub/IMG-20260420-WA0005.jpg", // 6
+  "/images/green-hub/IMG-20260420-WA0006.jpg", // 7
+  "/images/green-hub/IMG-20260420-WA0007.jpg", // 8
+  "/images/green-hub/IMG-20260420-WA0008.jpg", // 9
+  "/images/green-hub/IMG-20260420-WA0002.jpg", // 3
+  "/images/green-hub/IMG-20260420-WA0010.jpg", // 11
+];
 
 export default function SignatureGreenHub() {
   const [current, setCurrent] = useState(0);
